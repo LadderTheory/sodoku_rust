@@ -1,12 +1,11 @@
 use rand::prelude::*;
-use std::io::{stdin, Read};
+use sudoku::sudoku::Sud;
 use std::time::{Duration, Instant};
-use std::env::{self, args};
 use clap::{Arg, App};
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
+mod sudoku;
 
+fn main() {
     let matches = App::new("Sudoku")
         .arg(Arg::with_name("benchmark")
             .short("b")
@@ -23,6 +22,8 @@ fn main() {
         }
         _ => ()
     }
+
+    let mut _dok: Sud;
 
     //benchmark(1000);
 }
@@ -89,7 +90,7 @@ fn print_puzzle(p: &Vec<u32>) {
         if i % 9 == 0 {
             println!();
         }
-        let mut s;
+        let s;
         if *x == 0 {
             s = String::from("-");
         } else {

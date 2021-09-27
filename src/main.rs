@@ -1,5 +1,5 @@
 use rand::prelude::*;
-use sudoku::sudoku::Sud;
+use sudoku::sudoku::Sudoku;
 use std::time::{Duration, Instant};
 use clap::{Arg, App};
 
@@ -23,7 +23,7 @@ fn main() {
         _ => ()
     }
 
-    let mut _dok: Sud;
+    let mut _dok: Sudoku;
 
     //benchmark(1000);
 }
